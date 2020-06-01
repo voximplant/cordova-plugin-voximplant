@@ -1,0 +1,39 @@
+{
+  "name": "cordova-plugin-voximplant",
+  "version": "0.0.1",
+  "description": "Voximplant plugin for embedding voice and video communication into Cordova applications",
+  "main": "dist/VoximplantPlugin.min.js",
+  "types": "dist/VoximplantPlugin.d.ts",
+  "cordova": {
+    "id": "cordova-plugin-voximplant",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c --watch --no-treeshake"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voximplant/cordova-plugin-voximplant.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Zingaya Inc. <info@voximplant.com> (https://voximplant.com)",
+  "homepage": "https://voximplant.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cordova": "^0.0.34",
+    "rollup": "^1.32.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.26.0",
+    "typescript": "^3.6.3"
+  }
+}

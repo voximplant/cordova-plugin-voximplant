@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-voximplant" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Voximplant</name>
+    <js-module name="Voximplant" src="dist/VoximplantPlugin.min.js">
+        <clobbers target="Voximplant" />
+    </js-module>
+
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="VoximplantPlugin">
+                <param name="android-package" value="com.voximplant.cordova.sdk.VoximplantPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml" />
+        <source-file src="src/android/VoximplantPlugin.java" target-dir="src/com/voximplant/cordova/sdk" />
+        <source-file src="src/android/VoximplantUtils.java" target-dir="src/com/voximplant/cordova/sdk" />
+        <source-file src="src/android/ClientModule.java" target-dir="src/com/voximplant/cordova/sdk"/>
+        <source-file src="src/android/CallModule.java" target-dir="src/com/voximplant/cordova/sdk"/>
+        <source-file src="src/android/CallManager.java" target-dir="src/com/voximplant/cordova/sdk"/>
+        <framework src="com.voximplant:voximplant-sdk:2.16.0" />
+    </platform>
+
+    <platform name="ios">
+        <config-file parent="/*" target="config.xml">
+            <feature name="VoximplantPlugin">
+                <param name="ios-package" value="VoximplantPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/VoximplantPlugin.h"/>
+        <source-file src="src/ios/VoximplantPlugin.m" />
+        <header-file src="src/ios/VIClientModule.h"/>
+        <source-file src="src/ios/VIClientModule.m" />
+        <header-file src="src/ios/VICallModule.h" />
+        <source-file src="src/ios/VICallModule.m" />
+        <header-file src="src/ios/VoximplantCallManager.h" />
+        <source-file src="src/ios/VoximplantCallManager.m" />
+        <podspec>
+            <config>
+                <source url="https://cdn.cocoapods.org/"/>
+            </config>
+            <pods>
+                <pod name="VoxImplantSDK" spec="2.26.1"/>
+            </pods>
+        </podspec>
+    </platform>
+</plugin>
